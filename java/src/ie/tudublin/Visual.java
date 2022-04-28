@@ -11,6 +11,8 @@ public abstract class Visual extends PApplet
 
 	private float[] bands;
 	private float[] smoothedBands;
+	private float[] lerpedbuffer;
+	
 
 	private Minim minim;
 	private AudioInput ai;
@@ -27,10 +29,11 @@ public abstract class Visual extends PApplet
 	{
 		minim = new Minim(this);
 
-		fft = new FFT(frameSize, sampleRate);
+		fft = new FFT(1024, 44100);
 
 		bands = new float[(int) log2(frameSize)];
   		smoothedBands = new float[bands.length];
+		lerpedbuffer =new float[width];
 
 	}
 
@@ -58,6 +61,7 @@ public abstract class Visual extends PApplet
 		for(int i = 0 ; i < ab.size() ; i ++)
         {
 			total += abs(ab.get(i));
+			lerpedbuffer[i] = lerp(lerpedbuffer[i], ab.get(i), 0.05f);
 		}
 		amplitude = total / ab.size();
 		smoothedAmplitude = PApplet.lerp(smoothedAmplitude, amplitude, 0.1f);
@@ -116,6 +120,11 @@ public abstract class Visual extends PApplet
 
 	public float[] getSmoothedBands() {
 		return smoothedBands;
+	}
+
+	public float[] getlerpedbuffer()
+	{
+		return lerpedbuffer;
 	}
 
 	public Minim getMinim() {

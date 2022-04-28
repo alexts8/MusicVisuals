@@ -11,8 +11,8 @@ public class vis
         this.v= v;
     }
 
-    float[] lerpedBuffer;
-    float[] lerpedBuffer2;
+
+
     float rotation;
     float col=0;
 
@@ -38,7 +38,6 @@ public class vis
     public void render()
     {
         update();
-        lerpedBuffer = new float[v.width];
 
         float mag = 200;
         float s = 1;
@@ -61,7 +60,7 @@ public class vis
             float c = v.map(v.sin(v.radians(v.frameCount * 2 + i)),-1,1,0,255);
             v.stroke(c, 255, 255, 25);
             v.strokeWeight(10);
-            float f = lerpedBuffer[i] * v.height/2 * 4.0f;
+            float f = v.getlerpedbuffer()[i] * v.height/2 * 4.0f;
   
                         
             v.fill(c,255,255,100);
@@ -70,7 +69,7 @@ public class vis
             }
 
 
-            v.strokeWeight(2);
+            v.strokeWeight(3);
             v.noFill();
             v.stroke(col, 255, 255,125);
             col = (col + 1f) % 255;
@@ -82,7 +81,7 @@ public class vis
                 for (float theta = 0; theta<= 2*v.PI; theta+=0.01)
                 {
     
-                    float r = r(theta, 2,2,9,1,v.getSmoothedAmplitude()*20,v.getSmoothedAmplitude()*20);
+                    float r = r(theta, 2,2,9,1,v.getSmoothedAmplitude()*15,v.getSmoothedAmplitude()*15);
                     float x =  r * v.cos(theta) * num;
                     float y = r * v.sin(theta)* num;
                     v.rotate(rotation);
