@@ -19,7 +19,7 @@ public abstract class Visual extends PApplet
 	private FFT fft;
 
 	private float amplitude  = 0;
-	private float smothedAmplitude = 0;
+	private float smoothedAmplitude = 0;
 
 	
 	
@@ -60,7 +60,7 @@ public abstract class Visual extends PApplet
 			total += abs(ab.get(i));
 		}
 		amplitude = total / ab.size();
-		smothedAmplitude = PApplet.lerp(smothedAmplitude, amplitude, 0.1f);
+		smoothedAmplitude = PApplet.lerp(smoothedAmplitude, amplitude, 0.1f);
 	}
 
 
@@ -87,8 +87,9 @@ public abstract class Visual extends PApplet
 
 	public void loadAudio(String filename)
 	{
-		ap = minim.loadFile(filename, frameSize);
+		ap = minim.loadFile(filename, 1024);
 		ab = ap.mix;
+		ap.play();
 	}
 
 	public int getFrameSize() {
@@ -102,6 +103,8 @@ public abstract class Visual extends PApplet
 	public int getSampleRate() {
 		return sampleRate;
 	}
+
+
 
 	public void setSampleRate(int sampleRate) {
 		this.sampleRate = sampleRate;
@@ -133,7 +136,7 @@ public abstract class Visual extends PApplet
 	}
 
 	public float getSmoothedAmplitude() {
-		return smothedAmplitude;
+		return smoothedAmplitude;
 	}
 
 	public AudioPlayer getAudioPlayer() {
