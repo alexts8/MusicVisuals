@@ -5,8 +5,10 @@ import ie.tudublin.*;
 public class Visuals extends Visual
 {    
 
-    vis v;
+    render1 r;
+    render2 r2;
     float rotation=0;
+    int mode = 0;
 
     public void settings()
     {
@@ -24,13 +26,14 @@ public class Visuals extends Visual
         startMinim();
                 
         // Call loadAudio to load an audio file to process 
-        loadAudio("heroplanet.mp3");   
+        loadAudio("crystalised.mp3");   
 
         
         // Call this instead to read audio from the microphone
         //startListening(); 
 
-        v = new vis(this);
+        r = new render1(this);
+        r2 = new render2(this);
         colorMode(HSB);
     }
 
@@ -41,7 +44,19 @@ public class Visuals extends Visual
             getAudioPlayer().cue(0);
             getAudioPlayer().play();
         }
+
+        if(key=='1')
+        {
+            mode = 1;
+        }
+
+        if(key=='2')
+        {
+            mode = 2;
+        }
     }
+
+
 
 
         
@@ -65,7 +80,18 @@ public class Visuals extends Visual
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();    
         
-        v.render();
 
+        switch (mode) 
+        {
+            case 1:
+                r.render();
+            break;
+
+            case 2:
+                r2.render();
+            break;
+
+        }
     }
 }
+
