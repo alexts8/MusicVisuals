@@ -45,6 +45,7 @@ public class Visuals extends Visual
             getAudioPlayer().play();
         }
 
+
         if(key=='1')
         {
             mode = 1;
@@ -84,11 +85,11 @@ public class Visuals extends Visual
         switch (mode) 
         {
             case 1:
-                r.render();
+                r2.render();
             break;
 
             case 2:
-                r2.render();
+                r.render();
             break;
 
         }
