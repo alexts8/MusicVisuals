@@ -14,7 +14,7 @@ public class render2
 
     public void render()
     {
-        v.background(30,100,50);
+        v.background(30,100,70);
 
 
         //sound hole
@@ -39,7 +39,7 @@ public class render2
         {
             v.noFill();
             float y = v.map(i, 0,5,border,v.height-border);
-            v.bezier(0, y, v.width/2, y+v.getBands()[i]/2, v.width/2, y+v.getBands()[i]/2, v.width, y);
+            v.bezier(0, y, v.width/2, y+v.getBands()[i]/3, v.width/2, y+v.getBands()[i]/3, v.width, y);
             v.fill(255);
             v.circle(v.width-30,y,15);
         }
