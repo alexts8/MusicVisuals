@@ -1,6 +1,6 @@
 package c20336236;
 
-import processing.core.*;
+
 
 public class render1
 {
