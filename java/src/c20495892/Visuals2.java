@@ -1,21 +1,19 @@
-package c20336236;
+package c20495892;
 
 import ie.tudublin.*;
 
-public class Visuals extends Visual
+public class Visuals2 extends Visual
 {    
-
-    render1 r;
-    render2 r2;
-    float rotation=0;
-    int mode = 0;
+   
+    Terrain t1;
 
     public void settings()
     {
-        size(1024, 600);
+       
+        size(1024, 500, P3D);
         
         // Use this to make fullscreen
-        fullScreen();
+        //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
         //fullScreen(P3D, SPAN); 
@@ -24,18 +22,15 @@ public class Visuals extends Visual
     public void setup()
     {
         startMinim();
+        t1 = new Terrain(this);
                 
         // Call loadAudio to load an audio file to process 
         loadAudio("crystalised.mp3");   
 
         
         // Call this instead to read audio from the microphone
-        //startListening(); 
-
-        r = new render1(this);
-        r2 = new render2(this);
-    
-        colorMode(HSB);
+        startListening(); 
+      
     }
 
     public void keyPressed()
@@ -45,29 +40,7 @@ public class Visuals extends Visual
             getAudioPlayer().cue(0);
             getAudioPlayer().play();
         }
-
-
-        if(key=='1')
-        {
-            mode = 1;
-        }
-
-        if(key=='2')
-        {
-            mode = 2;
-        }
-
-        if(key=='3')
-        {
-            mode = 3;
-        }
     }
-
-
-
-
-        
-
 
     public void draw()
     {
@@ -85,20 +58,7 @@ public class Visuals extends Visual
         calculateFrequencyBands(); 
 
         // Call this is you want to get the average amplitude
-        calculateAverageAmplitude();    
-        
-
-        switch (mode) 
-        {
-            case 1:
-                r2.render();
-            break;
-
-            case 2:
-                r.render();
-            break;
-
-        }
+        calculateAverageAmplitude();        
+      t1.render();
     }
 }
-
