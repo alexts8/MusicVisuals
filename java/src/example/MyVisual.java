@@ -6,10 +6,21 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     AudioBandsVisual abv;
+    int cols, rows;
+    int scl = 20;
+    int w = 2000;
+    int h = 1600;
+
+    float flying = 0;
+
+    float[][] terrain;
 
     public void settings()
     {
-        size(1024, 500);
+        size(1024, 500, P3D);
+        cols = w / scl;
+        rows = h/ scl;
+        terrain = new float[cols][rows];
         
         // Use this to make fullscreen
         //fullScreen();
