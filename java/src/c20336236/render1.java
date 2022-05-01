@@ -63,15 +63,18 @@ public class render1
             float f = v.getlerpedbuffer()[i] * v.height/2 * 2.0f;
   
                         
-            v.fill(c,255,255,100);
-            v.rect(wave1+f, wave2-f, s,s);
-            v.rect(wave3+f, wave4-f, s,s);
+            v.fill(c,255,255,70);
+            for (int offs = -100; offs<=100; offs+=100)
+            {
+                v.rect(wave1+f, wave2-f+offs, s,s);
+                v.rect(wave3+f, wave4-f+offs, s,s);
             }
+        }
 
 
             v.strokeWeight(2);
             v.noFill();
-            v.stroke(col, 255, 255,125);
+            v.stroke(col, 255, 255,175);
             col = (col + 1f) % 255;
 
             for (int num = 5; num<=50; num+=5)
