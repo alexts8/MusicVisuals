@@ -7,15 +7,17 @@ public class Visuals extends Visual
 
     render1 r;
     render2 r2;
+    render3 r3;
+    menu menu;
     float rotation=0;
     int mode = 0;
 
     public void settings()
     {
-        size(1024, 600);
+        size(1024, 600,P3D);
         
         // Use this to make fullscreen
-        fullScreen();
+        //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
         //fullScreen(P3D, SPAN); 
@@ -34,7 +36,8 @@ public class Visuals extends Visual
 
         r = new render1(this);
         r2 = new render2(this);
-    
+        r3 = new render3(this);
+        menu = new menu(this);
         colorMode(HSB);
     }
 
@@ -42,8 +45,8 @@ public class Visuals extends Visual
     {
         if (key == ' ')
         {
-            getAudioPlayer().cue(0);
-            getAudioPlayer().play();
+            //getAudioPlayer().cue(0);
+            //getAudioPlayer().play();
         }
 
 
@@ -86,7 +89,10 @@ public class Visuals extends Visual
 
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();    
-        
+        if (mode==0)
+        {
+            menu.render();
+        }
 
         switch (mode) 
         {
@@ -96,6 +102,17 @@ public class Visuals extends Visual
 
             case 2:
                 r.render();
+            break;
+
+            case 3:
+                r3.render();
+            break;
+
+            case 9:
+                getAudioPlayer().cue(0);
+                getAudioPlayer().play();
+                mode=1;
+
             break;
 
         }

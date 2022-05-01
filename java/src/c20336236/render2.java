@@ -1,7 +1,5 @@
 package c20336236;
 
-import processing.core.*;
-
 public class render2
 {
     Visuals v;
