@@ -38,12 +38,15 @@ void render() {
 
   float yoff = flying;
   for (int y = 0; y < rows; y++) {
+
     float xoff = 0;
+
     for (int x = 0; x < cols; x++) {
+
       terrain1[x][y] = Visual.map(v.noise(xoff, yoff), 0, 1, -100, 100);
-      xoff += 0.2;
+      xoff += 0.1;
     }
-    yoff += 0.2;
+    yoff += 0.1;
   }
 
 
@@ -54,12 +57,21 @@ void render() {
 
   v.translate(v.width/2, v.height/2+50);
   v.rotateX(v.PI/3);
+
   v.translate(-w/2, -h/2);
+
   for (int y = 0; y < rows-1; y++) {
+
     v.beginShape(v.TRIANGLE_STRIP);
+
     for (int x = 0; x < cols; x++) {
-      v.vertex(x*scl, y*scl, terrain1[x][y]);
+
+      
+
+      v.vertex(x*scl , y*scl, terrain1[x][y]);
+
      v.vertex(x*scl, (y+1)*scl, terrain1[x][y+1]);
+     
      // v.rect(x*scl, y*scl, scl, scl);
     }
     v.endShape();

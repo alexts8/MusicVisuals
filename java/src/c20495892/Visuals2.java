@@ -6,30 +6,36 @@ public class Visuals2 extends Visual
 {    
    
     Terrain t1;
+    maskVisual m1;
 
     public void settings()
     {
        
-        size(1024, 500, P3D);
+        //size(1024, 500, P3D);
         
         // Use this to make fullscreen
         //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
-        //fullScreen(P3D, SPAN); 
+        fullScreen(P3D, SPAN); 
     }
 
     public void setup()
     {
         startMinim();
         t1 = new Terrain(this);
+        m1 = new maskVisual(this);
+
+        m1.loadSvg();
+        m1.printSvg();
+        
                 
         // Call loadAudio to load an audio file to process 
         loadAudio("crystalised.mp3");   
 
         
         // Call this instead to read audio from the microphone
-        startListening(); 
+        //startListening(); 
       
     }
 
@@ -59,6 +65,7 @@ public class Visuals2 extends Visual
 
         // Call this is you want to get the average amplitude
         calculateAverageAmplitude();        
-      t1.render();
+
+      m1.render();
     }
 }
