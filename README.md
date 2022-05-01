@@ -1,8 +1,17 @@
 # Music Visualiser Project
 
-Name:
+Name: Alex Tsiogas
 
-Student Number: 
+Student Number: C20336236
+
+Name: Ron Liquit
+
+Student Number: C20495892
+
+Name: Seán Devilly 
+
+Student Number: C20465804
+
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
