@@ -93,7 +93,7 @@ public abstract class Visual extends PApplet
 	{
 		ap = minim.loadFile(filename, 1024);
 		ab = ap.mix;
-		ap.play();
+		//ap.play();
 	}
 
 	public float getFrequency(){

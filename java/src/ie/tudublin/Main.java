@@ -2,6 +2,7 @@ package ie.tudublin;
 
 import example.CubeVisual;
 import example.MyVisual;
+import Final.FinalVisuals;
 import c20336236.Visuals;
 import c20495892.Visuals2;
 import c20465804.Visuals3;
@@ -34,9 +35,16 @@ public class Main
 		processing.core.PApplet.runSketch( a, new Visuals3());
 	}
 
+	public void fin()
+	{
+		String[] a = {"MAIN"};
+		processing.core.PApplet.runSketch( a, new FinalVisuals());
+	}
+
+
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.visuals3();			
+		main.fin();			
 	}
 }

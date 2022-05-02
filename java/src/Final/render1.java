@@ -1,12 +1,12 @@
-package Final;
+package c20336236;
 
 
 
 public class render1
 {
-    FinalVisuals v;
+    Visuals v;
 
-    public render1(FinalVisuals v) 
+    public render1(Visuals v) 
     {
         this.v= v;
     }
@@ -43,8 +43,6 @@ public class render1
         float s = 1;
         v.noStroke();
 
-        v.textSize(15);
-        v.text("Use A and D keys to rotate the centrepiece!", 10,v.height-20);
 
         v.translate(v.width/2, v.height/2);
 
