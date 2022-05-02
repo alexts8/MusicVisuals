@@ -63,7 +63,7 @@ public class maskVisual {
 		float py = cy - radius; 
         index1 = v.second() % 8;
         float freq = v.getFrequency();
-        int index = (int)PApplet.map(v.getSmoothedAmplitude(), 0 , 1500, 0 , 7) % 8;
+        int index = (int)PApplet.map(freq, 44, 1400, 0 , 7) % 8;
       
        
         
@@ -86,6 +86,7 @@ public class maskVisual {
             v.circle(0, 0, radius *2 + 100);
             v.circle(0, 0, radius *2 - 100);
 
+            v.println(index);
 
             v.beginShape();
             
@@ -95,9 +96,9 @@ public class maskVisual {
                 float formula = superFormula(theta2,
                  2, //size x
                  2,  // size y
-                index1,
-                 1,
-                  v.sin(t) * 0.5f +  v.getSmoothedAmplitude()  ,
+                index1, // number of points
+                 1, // resolution quality
+                  v.sin(t) * 0.5f +  v.getSmoothedAmplitude(),
                   v.cos(t) *0.5f + v.getSmoothedAmplitude()  
                  ) ;
                 float x2 = x + formula* v.cos(theta2) * 25;
@@ -119,8 +120,8 @@ public class maskVisual {
 
             v.fill(100, 255, 255,125);
             v.stroke(100, 255, 255,125);
-            myMasks.get(index).disableStyle();
-            v.shape(myMasks.get(index), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 5), 300* ( 1 +  v.getSmoothedAmplitude() * 5) );
+            myMasks.get(index1).disableStyle();
+            v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 5), 300* ( 1 +  v.getSmoothedAmplitude() * 5) );
 
       
        
