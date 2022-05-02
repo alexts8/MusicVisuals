@@ -1,12 +1,12 @@
-package c20336236;
+package Final;
 
 
 
 public class render1
 {
-    Visuals v;
+    FinalVisuals v;
 
-    public render1(Visuals v) 
+    public render1(FinalVisuals v) 
     {
         this.v= v;
     }
