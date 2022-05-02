@@ -22,8 +22,9 @@ public class Visuals2 extends Visual
     }
 
     public void setup()
-    {
+    {       
         startMinim();
+        
         t1 = new Terrain(this);
         m1 = new maskVisual(this);
        
