@@ -31,12 +31,23 @@ public class Visuals2 extends Visual
         
                 
         // Call loadAudio to load an audio file to process 
-        loadAudio("crystalised.mp3");   
+        loadAudio("crystalised.mp3"); 
+        
+       
+        
 
+       
         
         // Call this instead to read audio from the microphone
         //startListening(); 
       
+
+        try {
+            
+            calculateFFT();
+        } catch (VisualException e) {
+            System.out.println("please loadfile or start listening");
+        }
     }
 
     public void keyPressed()

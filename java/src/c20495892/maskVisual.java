@@ -45,6 +45,7 @@ public class maskVisual {
         }
     }
     float t;
+    int index1 = 0;
 
     public void render(){
 
@@ -63,6 +64,8 @@ public class maskVisual {
         int sides = points * 2;
         float px = cx;
 		float py = cy - radius; 
+        index1 = v.second() % 8;
+     
 
         myMasks.get(1).disableStyle();
         v.shapeMode(PApplet.CENTER);
@@ -85,10 +88,10 @@ public class maskVisual {
                 float formula = superFormula(theta2,
                  2,
                  2,
-                 6,
+                index1,
                  1,
-                 v.getSmoothedAmplitude()*25 ,
-                 v.getSmoothedAmplitude()*25 
+                 v.sin(t)*0.5f + v.getSmoothedAmplitude()*25 ,
+                 v.cos(t)*0.5f + v.getSmoothedAmplitude()*25 
                  ) ;
                 float x2 = x + formula* v.cos(theta2) * 10;
                 float y2 = y +  formula * v.sin(theta2)* 10;
@@ -97,17 +100,31 @@ public class maskVisual {
             }
 
             v.endShape();
-            t = (t + 0.1f)  % 360;
+            t = (t + v.second())  % 360;
 
             
             //line(px, py, x, y);
             px = x;
             py = y;
        }
+       /*
+       float thisFreq;
+
+        thisFreq = v.getFrequency();
+        if(thisFreq > 1000f){
+
+            index1 = (int)v.random(0,8);
+            v.println(index1);
+
+        }
+       
+        */
        
         v.fill(100, 255, 255,125);
         v.stroke(100, 255, 255,125);
-        v.shape(myMasks.get(1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 10), 300* ( 1 +  v.getSmoothedAmplitude() * 10) );
+        myMasks.get(index1).disableStyle();
+        v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 10), 300* ( 1 +  v.getSmoothedAmplitude() * 10) );
+        
        
         //}
 

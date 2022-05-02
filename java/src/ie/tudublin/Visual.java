@@ -93,8 +93,35 @@ public abstract class Visual extends PApplet
 	{
 		ap = minim.loadFile(filename, 1024);
 		ab = ap.mix;
-		//ap.play();
+		ap.play();
 	}
+
+	public float getFrequency(){
+
+		
+
+		int maxIndex = 0;
+
+        
+
+        for(int i = 0 ; i < fft.specSize(); i ++)
+        {
+            if (fft.getBand(i) > fft.getBand(maxIndex))
+            {
+                maxIndex = i;
+            }
+        }
+
+        float freq = fft.indexToFreq(maxIndex);
+		textSize(20);
+        //fill(255);
+        text("Freq: " + freq, 100, 200);
+
+
+       
+		return freq;
+	}
+	
 
 	public int getFrameSize() {
 		return frameSize;
