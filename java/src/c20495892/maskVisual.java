@@ -133,7 +133,7 @@ public class maskVisual {
        for (int i = 0; i < particles.size(); i++) {
            if(!particles.get(i).removeParticle())
            {
-            particles.get(i).update( v.getSmoothedAmplitude()> 0.06f);
+            particles.get(i).update( v.getSmoothedAmplitude()> 0.06f || freq > 500f);
             particles.get(i).show();
            }
 
