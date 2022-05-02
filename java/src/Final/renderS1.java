@@ -67,7 +67,7 @@ public class renderS1 {
                 for (PVector p : points) {
                     float c = v.map(v.sin(v.radians(v.frameCount * 2 + i)),-1,1,0,255);
                     v.stroke(c, 255, 255);
-                    float f = v.getSmoothedBands()[i] * v.height/2 * 0.5f;
+                    float f = v.getlerpedbuffer()[i] * v.height/2 * 0.5f;
                     v.vertex(p.x+f, p.y+f, p.z+f);
                 }
             }

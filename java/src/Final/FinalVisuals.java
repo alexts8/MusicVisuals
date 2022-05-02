@@ -79,6 +79,7 @@ public class FinalVisuals extends Visual
     {
         if (key == ' ')
         {
+
             //getAudioPlayer().cue(0);
             //getAudioPlayer().play();
         }
