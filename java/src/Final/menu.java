@@ -1,10 +1,10 @@
-package final;
+package Final;
 
 public class menu 
 {
-    Visuals v;
+    FinalVisuals v;
 
-    public menu(Visuals v) 
+    public menu(FinalVisuals v) 
     {
         this.v= v;
     }
