@@ -5,17 +5,6 @@ import ie.tudublin.*;
 public class FinalVisuals extends Visual
 {    
 
-
-    float a, b, c;
-    float x, l, z;
-    float lx, ly, lz;
-    float dt, deg, deg2;
-    int cols;
-    int rows;
-    float[][] current = new float[cols][rows];
-    float[][] prev = new float[cols][rows];
-
-
     render1 r;
     render2 r2;
     renderS1 r3;
@@ -24,6 +13,14 @@ public class FinalVisuals extends Visual
     menu menu;
     float rotation=0;
     int mode = 0;
+    float a, b, c;
+    float x, l, z;
+    float lx, ly, lz;
+    float dt, deg, deg2;
+    int cols;
+    int rows;
+    float[][] current = new float[cols][rows];
+    float[][] prev = new float[cols][rows];
 
     public void settings()
     {
@@ -162,9 +159,6 @@ public class FinalVisuals extends Visual
             case 5:
                 r5.render();
             break;
-
-
-            
 
             case 9:
                 getAudioPlayer().cue(0);
