@@ -1,5 +1,6 @@
 package c20495892;
 
+import example.AudioBandsVisual;
 import ie.tudublin.*;
 
 public class Visuals2 extends Visual
@@ -7,11 +8,11 @@ public class Visuals2 extends Visual
    
     Terrain t1;
     maskVisual m1;
-
+    
     public void settings()
     {
        
-        //size(1024, 500, P3D);
+        //size(1024, 500);
         
         // Use this to make fullscreen
         //fullScreen();
@@ -25,6 +26,7 @@ public class Visuals2 extends Visual
         startMinim();
         t1 = new Terrain(this);
         m1 = new maskVisual(this);
+       
 
         m1.loadSvg();
         m1.printSvg();

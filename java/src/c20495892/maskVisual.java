@@ -47,16 +47,13 @@ public class maskVisual {
     float t;
     int index1 = 0;
 
+   
     public void render(){
 
         v.background(0);
         v.translate(v.width/2, v.height/2);
-        //float x1 = PApplet.map(0, 0, 300* ( 1 +  v.getSmoothedAmplitude()), 0, v.width);
-        //float y1 = PApplet.map(0, 0, 400* ( 1 +  v.getSmoothedAmplitude()), 0, v.height);
-
-        //for(int i = 0; i <= 8; i++){
-        //int index = (int)v.map(v.getSmoothedAmplitude(), 85f, 155f, 0, 8f);
-        int index = (int)v.random(0, 8);
+        
+      
         float cx = 0;
 	    float cy = 0;
         float radius = 400;	
@@ -65,11 +62,14 @@ public class maskVisual {
         float px = cx;
 		float py = cy - radius; 
         index1 = v.second() % 8;
-     
+        float freq = v.getFrequency();
+        int index = (int)PApplet.map(freq, 44, 1400, 0 , 7) % 8;
+      
+       
+        
 
-        myMasks.get(1).disableStyle();
-        v.shapeMode(PApplet.CENTER);
 
+            v.shapeMode(PApplet.CENTER);
         for(int i = 0 ; i <= sides ; i ++)
         {
         
@@ -81,52 +81,51 @@ public class maskVisual {
             v.strokeWeight(2);
             v.noFill();
             v.stroke(100, 255, 255,125);
+
+          
+            v.circle(0, 0, radius *2 + 100);
+            v.circle(0, 0, radius *2 - 100);
+
+            v.println(index);
+
             v.beginShape();
+            
             for (float theta2 = 0; theta2<=  2*PApplet.PI; theta2 += 0.01)
             {
 
                 float formula = superFormula(theta2,
-                 2,
-                 2,
-                index1,
-                 1,
-                 v.sin(t)*0.5f + v.getSmoothedAmplitude()*25 ,
-                 v.cos(t)*0.5f + v.getSmoothedAmplitude()*25 
+                 2, //size x
+                 2,  // size y
+                index1, // number of points
+                 1, // resolution quality
+                  v.sin(t) * 0.5f +  v.getSmoothedAmplitude(),
+                  v.cos(t) *0.5f + v.getSmoothedAmplitude()  
                  ) ;
-                float x2 = x + formula* v.cos(theta2) * 10;
-                float y2 = y +  formula * v.sin(theta2)* 10;
+                float x2 = x + formula* v.cos(theta2) * 25;
+                float y2 = y +  formula * v.sin(theta2)* 25;
                 v.vertex(x2,y2);
                     
             }
 
             v.endShape();
-            t = (t + v.second())  % 360;
-
-            
+         
             //line(px, py, x, y);
             px = x;
             py = y;
        }
-       /*
-       float thisFreq;
 
-        thisFreq = v.getFrequency();
-        if(thisFreq > 1000f){
+       t = t + 0.5f ;
+      
+    
 
-            index1 = (int)v.random(0,8);
-            v.println(index1);
+            v.fill(100, 255, 255,125);
+            v.stroke(100, 255, 255,125);
+            myMasks.get(index1).disableStyle();
+            v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 5), 300* ( 1 +  v.getSmoothedAmplitude() * 5) );
 
-        }
+      
        
-        */
-       
-        v.fill(100, 255, 255,125);
-        v.stroke(100, 255, 255,125);
-        myMasks.get(index1).disableStyle();
-        v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 10), 300* ( 1 +  v.getSmoothedAmplitude() * 10) );
-        
-       
-        //}
+         
 
     }
 

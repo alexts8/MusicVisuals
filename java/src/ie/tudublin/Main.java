@@ -32,19 +32,19 @@ public class Main
 	public void visuals3()
 	{
 		String[] a = {"MAIN"};
-		processing.core.PApplet.runSketch( a, new Visuals3());
+	processing.core.PApplet.runSketch( a, new Visuals3());
 	}
 
-	public void fin()
+	public void finalvis()
 	{
 		String[] a = {"MAIN"};
-		processing.core.PApplet.runSketch( a, new FinalVisuals());
+	processing.core.PApplet.runSketch( a, new FinalVisuals());
 	}
 
 
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.fin();			
+		main.finalvis();			
 	}
 }

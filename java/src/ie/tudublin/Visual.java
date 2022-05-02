@@ -104,7 +104,7 @@ public abstract class Visual extends PApplet
 
         
 
-        for(int i = 0 ; i < fft.specSize(); i ++)
+        for(int i = 0 ; i < fft.specSize()  ; i ++)
         {
             if (fft.getBand(i) > fft.getBand(maxIndex))
             {
