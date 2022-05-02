@@ -36,7 +36,9 @@ We made an effort to keep the colours and visuals harmonious and aesthetically p
 
 
 # Instructions
-When the program is run, the user is met with a menu screen. They are directed to press 'g' to begin the visualiser. Upon pressing g, the song begins and the first visual of 5 total is displayed. These 5 visuals can be viewed at any time of the user's choosing, by pressing a key 1 through 5 on their keyboard. Certain sketches have an added layer of interaction, as they can be conterolled via the 'wasd' keys on the keyboard. Visual 2 can be rotated clockwise or anticlockwise using a or d. The 3D element of Visual 3 can be rotated around the x or y axis in either direction by using the w, a, s or d keys.The user can switch between these visuals and continue to control them for the duration of the song.
+When the program is run, the user is met with a menu screen. They are directed to press 'g' to begin the visualiser. Upon pressing g, the song begins and the first visual of 5 total is displayed. These 5 visuals can be viewed at any time of the user's choosing, by pressing a key 1 through 5 on their keyboard.
+
+Certain sketches have an added layer of interaction, as they can be conterolled via the 'wasd' keys on the keyboard. Visual 2 can be rotated clockwise or anticlockwise using a or d. The 3D element of Visual 3 can be rotated around the x or y axis in either direction by using the w, a, s or d keys. The user can switch between these visuals and continue to control them for the duration of the song.
 
 # How it works
 
