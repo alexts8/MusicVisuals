@@ -72,7 +72,8 @@ public class maskVisual {
      
         rotationRate  += 0.01f;
 
-        int index = (int)PApplet.map(freq, 44, 1400, 0 , 7) % 8;
+
+        float colorfill = PApplet.map(index1, 0, 8, 0 , 255) ;
       
        
 
@@ -89,7 +90,7 @@ public class maskVisual {
             
             v.strokeWeight(2);
             v.noFill();
-            v.stroke(100, 255, 255,125);
+            v.stroke(colorfill, 255, 255,125);
 
           
             v.circle(0, 0, radius *2 + 100);
@@ -98,6 +99,7 @@ public class maskVisual {
            
             v.pushMatrix();
             v.beginShape();
+            
             
             for (float theta2 = 0; theta2<=  2*PApplet.PI; theta2 += 0.01)
             {
@@ -146,8 +148,8 @@ public class maskVisual {
       
        
 
-            v.fill(100, 255, 255,125);
-            v.stroke(100, 255, 255,125);
+            v.fill(colorfill, 255, 255,125);
+            v.stroke(colorfill, 255, 255,125);
             myMasks.get(index1).disableStyle();
             v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 5), 300* ( 1 +  v.getSmoothedAmplitude() * 5) );
 
@@ -161,7 +163,7 @@ public class maskVisual {
                 
                 float radius2 = v.map(v.getAudioBuffer().get(index2), -1, 1, 150, 350);
                 
-                float x4 = radius2 * v.sin( v.radians(i)) * t; 
+                float x4 = radius2 * v.sin( v.radians(i) ) * t; 
                 float y4 = radius2 * v.cos( v.radians(i) );
                 v.vertex(x4, y4);
             }
