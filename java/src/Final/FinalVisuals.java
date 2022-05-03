@@ -24,13 +24,13 @@ public class FinalVisuals extends Visual
 
     public void settings()
     {
-        //size(1024, 600, P3D);
+        size(1500, 1000, P3D);
         
         // Use this to make fullscreen
         //fullScreen();
 
         // Use this to make fullscreen and use P3D for 3D graphics
-        fullScreen(P3D, SPAN); 
+        //fullScreen(P3D, SPAN); 
 
 
         a = 10;
