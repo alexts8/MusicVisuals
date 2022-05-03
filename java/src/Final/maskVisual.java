@@ -4,8 +4,11 @@ import processing.core.*;
 import ie.tudublin.Visual;
 import processing.core.PApplet;
 import java.util.ArrayList;
+import java.util.Map;
 
-import javax.swing.table.TableStringConverter;
+
+
+import com.jogamp.graph.geom.Vertex;
 
 import processing.data.TableRow;
 
@@ -44,18 +47,18 @@ public class maskVisual {
         }
     }
     float t;
+    float rotationRate;
     int index1 = 0;
+    
+    ArrayList<pParticle> particles = new ArrayList<pParticle>();
 
+   
     public void render(){
 
         v.background(0);
         v.translate(v.width/2, v.height/2);
-        //float x1 = PApplet.map(0, 0, 300* ( 1 +  v.getSmoothedAmplitude()), 0, v.width);
-        //float y1 = PApplet.map(0, 0, 400* ( 1 +  v.getSmoothedAmplitude()), 0, v.height);
-
-        //for(int i = 0; i <= 8; i++){
-        //int index = (int)v.map(v.getSmoothedAmplitude(), 85f, 155f, 0, 8f);
-        int index = (int)v.random(0, 8);
+        
+      
         float cx = 0;
 	    float cy = 0;
         float radius = 400;	
@@ -64,11 +67,18 @@ public class maskVisual {
         float px = cx;
 		float py = cy - radius; 
         index1 = v.second() % 8;
+        float freq = v.getFrequency();
+
      
+        rotationRate  += 0.01f;
 
-        myMasks.get(1).disableStyle();
-        v.shapeMode(PApplet.CENTER);
+        int index = (int)PApplet.map(freq, 44, 1400, 0 , 7) % 8;
+      
+       
 
+
+
+            v.shapeMode(PApplet.CENTER);
         for(int i = 0 ; i <= sides ; i ++)
         {
         
@@ -80,52 +90,85 @@ public class maskVisual {
             v.strokeWeight(2);
             v.noFill();
             v.stroke(100, 255, 255,125);
+
+          
+            v.circle(0, 0, radius *2 + 100);
+            v.circle(0, 0, radius *2 - 100);
+
+           
+            v.pushMatrix();
             v.beginShape();
+            
             for (float theta2 = 0; theta2<=  2*PApplet.PI; theta2 += 0.01)
             {
 
                 float formula = superFormula(theta2,
-                 2,
-                 2,
-                index1,
-                 1,
-                 v.sin(t)*0.5f + v.getSmoothedAmplitude()*25 ,
-                 v.cos(t)*0.5f + v.getSmoothedAmplitude()*25 
+                 2, //size x
+                 2,  // size y
+                index1, // number of points
+                 1, // resolution quality
+                  v.sin(v.degrees(t)) * 0.5f +  v.getSmoothedAmplitude(),
+                  v.cos(v.degrees(t)) *0.5f + v.getSmoothedAmplitude()  
                  ) ;
-                float x2 = x + formula* v.cos(theta2) * 10;
-                float y2 = y +  formula * v.sin(theta2)* 10;
+                float x2 = x + formula * v.cos(theta2) * 25;
+                float y2 = y +  formula * v.sin(theta2)* 25;
+                
                 v.vertex(x2,y2);
+                v.rotate(rotationRate);
                     
             }
 
             v.endShape();
-            t = (t + v.second())  % 360;
 
-            
-            //line(px, py, x, y);
+            v.popMatrix();
+         
+           
             px = x;
             py = y;
        }
-       /*
-       float thisFreq;
 
-        thisFreq = v.getFrequency();
-        if(thisFreq > 1000f){
+       pParticle p = new pParticle(v);
+       particles.add(p);
 
-            index1 = (int)v.random(0,8);
-            v.println(index1);
+       for (int i = 0; i < particles.size(); i++) {
+           if(!particles.get(i).removeParticle())
+           {
+            particles.get(i).update( v.getSmoothedAmplitude()> 0.06f || freq > 500f);
+            particles.get(i).show();
+           }
 
+           else{
+               particles.remove(i);
+           }
+       }
+
+       t = t + 0.5f ;
+      
+       
+
+            v.fill(100, 255, 255,125);
+            v.stroke(100, 255, 255,125);
+            myMasks.get(index1).disableStyle();
+            v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 5), 300* ( 1 +  v.getSmoothedAmplitude() * 5) );
+
+        for( int t = -1; t <= 1 ; t += 2){
+            v.beginShape();
+            for(int i = 0 ; i <= 180 ; i++)
+            {
+                int index2 = v.floor(v.map(i, 0 , 180, 0, v.getAudioBuffer().size() - 1));
+                v.noFill();
+              
+                
+                float radius2 = v.map(v.getAudioBuffer().get(index2), -1, 1, 150, 350);
+                
+                float x4 = radius2 * v.sin( v.radians(i)) * t; 
+                float y4 = radius2 * v.cos( v.radians(i) );
+                v.vertex(x4, y4);
+            }
+            v.endShape();
         }
-       
-        */
-       
-        v.fill(100, 255, 255,125);
-        v.stroke(100, 255, 255,125);
-        myMasks.get(index1).disableStyle();
-        v.shape(myMasks.get(index1), 0, 0, 200* ( 1 +  v.getSmoothedAmplitude() * 10), 300* ( 1 +  v.getSmoothedAmplitude() * 10) );
-        
-       
-        //}
+
+         
 
     }
 

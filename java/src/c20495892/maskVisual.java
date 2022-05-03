@@ -122,7 +122,7 @@ public class maskVisual {
 
             v.popMatrix();
          
-            //line(px, py, x, y);
+           
             px = x;
             py = y;
        }
@@ -157,7 +157,7 @@ public class maskVisual {
             {
                 int index2 = v.floor(v.map(i, 0 , 180, 0, v.getAudioBuffer().size() - 1));
                 v.noFill();
-                //v.line(i, 0, i, v.height/2 * v.getAudioBuffer().get(i));
+              
                 
                 float radius2 = v.map(v.getAudioBuffer().get(index2), -1, 1, 150, 350);
                 
@@ -168,18 +168,6 @@ public class maskVisual {
             v.endShape();
         }
 
-            /*
-            for(int i = 0 ; i < v.getAudioBuffer().size() ; i ++)
-            {
-                v.stroke(
-                    PApplet.map(i, 0, v.getAudioBuffer().size(), 0, 255)
-                    , 255
-                    , 255
-                );
-                v.noFill();
-                v.line(i, 0, i, v.height/2 * v.getAudioBuffer().get(i));
-            }
-            */
          
 
     }
