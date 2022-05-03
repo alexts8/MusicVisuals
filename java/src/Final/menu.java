@@ -18,7 +18,7 @@ public class menu
         v.textAlign(v.CENTER);
         v.textSize(50);
         v.text("Music Visualiser", v.width/2, v.height/2-150);
-        v.text("Crystalised - The xx", v.width/2, v.height/2-100);
+        v.text("The xx - Crystalised", v.width/2, v.height/2-100);
         v.textSize(30);
         v.text("Press g to begin", v.width/2, v.height/2);
     }
