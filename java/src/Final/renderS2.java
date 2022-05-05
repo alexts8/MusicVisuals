@@ -44,7 +44,7 @@ public class renderS2 {
                 e = (float) (i/3.0 % 360);
                 v.fill(e, 255, 255);
                 v.noStroke();
-                float f = v.getlerpedbuffer()[i] * v.height/2 * 4.0f;
+                float f = v.getlerpedbuffer()[i] * v.height/2 * 2.0f;
                 v.ellipse(c+f, d, 4-f, 4);
             }
             ph1 += 10;
