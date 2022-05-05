@@ -28,6 +28,7 @@ public class pParticle {
 
     }
 
+    //Update the smpeed
     public void update(boolean myCondition){
         this.vel.add(this.acc);
         this.pos.add(this.vel);
