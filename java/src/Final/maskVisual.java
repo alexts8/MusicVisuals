@@ -128,7 +128,7 @@ public class maskVisual {
             px = x;
             py = y;
        }
-
+        v.fill(255);
        pParticle p = new pParticle(v);
        particles.add(p);
 

@@ -62,7 +62,7 @@ The third visual shows a lorenz attractor with a background of sine waves. Both 
 The fourth visual contains a reactive flower model as well as four background rippling circles. The flower model is based on Vogel's formula to create a phyllotactic pattern. It also reacts to the music using a lerped buffer function. The background for this visual is four grey rippling-circles that blend together to create various different patterns when they collide. They are created using arrays in a for loop.
 
 ![visual2](https://user-images.githubusercontent.com/98481475/167173902-68fd759e-64f8-4fd5-9735-4d7cbc45fb28.jpg)
-
+the Fifth visual showcases 9 disctinct tiki masks chaning periodically using an array of svg files, we are able to scale the images in accordance to the amplitude of the song, in between the two ciruclar bands also contains a rotating exotic flowers that change in the number of petals each second, To create these beautiful petals we used vogels fomula that changes its shape rapidly. the flowers are mapped in a circle to give it an even space. The colour scheme is also mapped from 0-225 to create vibrant colourful images. around the tiki masks is a ciruclar waveform using vertex that reacts stunningly with music captivating the change of intensity of the song. it also releases particles using pVectors that appear around the ring, these particle's velocity accelerates by the high amplitudes of the song creating a star field effect and  mimicing the night sky. 
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
