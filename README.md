@@ -68,7 +68,9 @@ Furthermore, we think our final product works very well with our song choice. We
 
 Good time management is key when completing an assignment, and we are proud of how we started working in a timely manner and the fact that we did not do need to rush any aspect of the assignment, as this would not only have led to more stress but also worsened the caliber of our project. 
 
-We worked as a team and utilizing different skills and knowlegdge to create this project, we brought together interesting ideas that we could all agree on. We were able to help each other in times of need and collaberated in a professional and friendly manner. We are proud to be able to learn something new by doing this project in areas such as mathematics and physics using processing as well as the different algorithms creating captivating visuals.
+We are also proud with the complexity of the code itself. Some of the mathematical formulas were very difficult to translate into java, and some methods from the processing library were not at all easy to get to grips with, but we are certainly pleased with how we managed to utilise them. Some of the principles of OOP such as polymorphism and subclassng felt unnatural and new to us, as they arent things we were necessarily used to applying prior to this project. However, our Object Oriented Programming skills were definitely ehnanced during the assignment, as we divided all our visuals into subclassses and made use of inheritance and polymorphism. It is definitely fair to say that our java skills improved on all fronts throughout our development of this project, and that is something to be proud of.
+
+We worked as a team and utilizing different skills and knowledge to create this project, we brought together interesting ideas that we could all agree on. We were able to help each other in times of need and collaberated in a professional and friendly manner. We are proud to be able to learn something new by doing this project in areas such as mathematics and physics using processing as well as the different algorithms creating captivating visuals.
 
 # Markdown Tutorial
 
