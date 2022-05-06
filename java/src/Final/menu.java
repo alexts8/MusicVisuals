@@ -1,5 +1,7 @@
 package Final;
 
+import java.util.Map;
+
 public class menu 
 {
     FinalVisuals v;
@@ -31,6 +33,32 @@ public class menu
 
         sinVal = (sinVal + 1) % 361;
         cosVal = (cosVal + 2) % 361;
+
+        
+        v.noFill();
+        v.beginShape();
+        v.stroke(200,255,255);
+        v.vertex(40,0);
+        v.vertex(200, 160);
+        v.vertex(160, 200);
+       
+        v.stroke(150,255,255);
+        v.vertex(0, 40);
+        v.vertex(-160, 200);
+        v.vertex(-200, 160);
+        
+        v.stroke(100,255,255);
+        v.vertex(-40, 0);
+        v.vertex(-200, -160);
+        v.vertex(-160, -200);
+
+        v.vertex(0, -40);
+        v.stroke(50,255,255);
+        v.vertex(160, -200);
+        v.vertex(200, -160);
+        v.vertex(40, 0);
+        
+        v.endShape();
     }
 
     public void update()
