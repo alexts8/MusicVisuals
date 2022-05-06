@@ -66,6 +66,8 @@ One thing we are particularly proud of after our completion of our assignment, i
 
 Furthermore, we think our final product works very well with our song choice. We were certain to create visuals with the atmosphere of the song in mind, which led to visuals such as the guitar and the tiki masks. We believed from the beginning that the match between the atmosphere of the song and our visuals would be key in creating a more enjoyable overall experience, and we are very proud of how we adhered to this principle.
 
+Good time management is key when completing an assignment, and we are proud of how we started working in a timely manner and the fact that we did not do need to rush any aspect of the assignment, as this would not only have led to more stress but also worsened the caliber of our project. 
+
 
 # Markdown Tutorial
 
