@@ -58,6 +58,9 @@ The fourth visual contains a reactive flower model as well as four background ri
 
 ![visual2](https://user-images.githubusercontent.com/98481475/167173902-68fd759e-64f8-4fd5-9735-4d7cbc45fb28.jpg)
 the Fifth visual showcases 9 distinct tiki masks changing periodically using an array of svg files. We are able to scale the images in accordance with the amplitude of the song. Between the two circuclar bands there are also contained rotating exotic flowers that change in number of petals each second. To create these  petals we utilised vogels formula, that changes its shape rapidly. The flowers are mapped in a circle to give it an even space. The colour scheme is also mapped from 0-225 to create vibrant colourful images. Around the tiki masks is a circuclar waveform using vertex that reacts with music captivating the change of intensity of the song. It also releases particles using pVectors that appear around the ring, and these particles' velocity accelerates by the high amplitudes of the song creating a star field effect and  mimicking the night sky. 
+
+![image](https://user-images.githubusercontent.com/98460373/167193930-b33c2e28-f585-4c04-81a4-7b3c7256f0de.png)
+
 # What I am most proud of in the assignment
 One thing we are particularly proud of after our completion of our assignment, is the cohesiveness of the visuals, in relation to the music. We believe that throughout the visualiser, the colours are harmonious and the atmosphere created by each visual coalesce well to form one larger visual experience. We are particularly proud of this, as it demonstrates good project management, and shows that despite the fact that we each created visuals seperately, we maintained a shared vision for what the final product should look and feel like - and we are very proud of the result.
 
