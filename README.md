@@ -42,6 +42,22 @@ Certain sketches have an added layer of interaction, as they can be conterolled 
 
 # How it works
 
+As mentioned previously, we developed 5 renders in total, and a menu which essentially constitutes a sixth. Each of these renders are stored in their own class. In each class, an instance of the main java file "visual" is created. This visual file extends another java file, "visuals", which contains useful methods for calculating thigs like amplitude and frequency bands. In doing this, we allowed ourselves to access these methods in each render class, and this was essentially how we created the visuals. Each of the renders' render methods are called in the class "visual" at the appropriate time (using a switch statement), to display them on the screen.
+
+*The following is a brief explanation of each visual*
+
+The first visual represents a guitar, and displays first upon beginning the visualiser. It contains 6 strings, created using processing's built in "bezier" function, which was researched. Using the getBands() function, we are able to make each of these beziers change shape, based on frequencies - each one "vibrates" - the parameters of the bezier function change -  when a frequency within their frequency band is detected. Using this, we can give the impression of realistic guitar strings that synchronize to the music, as each one vibrates independently, when certain frequencies are present.
+
+![image](https://user-images.githubusercontent.com/98460373/167168462-5544a931-5c45-4a5a-b4da-7533c1de7b47.png)
+
+
+The second visual contains a background of sin waves, that react to changes in amplitude using the getAmplitude() function. The centerpiece is made of a collection of shapes made using the "superformula" - a mathematical formula we researched, that creates interesting shapes using some of processing's mathematical functions. This shape also reacts to amplitude, and can be rotated via the keyboard, using processing's "rotate"
+
+![image](https://user-images.githubusercontent.com/98460373/167169198-f340e219-138d-4f04-8d8a-ffe883c9f4e9.png)
+
+
+
+
 # What I am most proud of in the assignment
 
 # Markdown Tutorial
