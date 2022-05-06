@@ -23,12 +23,7 @@ Student Number: C20465804
 # Description of the assignment
 *Music Visualiser assignment OOP 2021-22*
 
-For our assignment, we have developed a music visualiser using java's processing and minim libraries. It is a visual experience consisting of various visual elements that react to and synchronize with music (our song of choice being "Crystalised" by The xx), and some elements can be controlled by the user via the keyboard. There are (x number) of distinct "renders", which are essentially different screens of visual elements, and the user can change between these screens at their will via the keyboard. The screens are as follows:
-
-- +image
-- +image
-- +image
-- +image
+For our assignment, we have developed a music visualiser using java's processing and minim libraries. It is a visual experience consisting of various visual elements that react to and synchronize with music (our song of choice being "Crystalised" by The xx), and some elements can be controlled by the user via the keyboard. There are (x number) of distinct "renders", which are essentially different screens of visual elements, and the user can change between these screens at their will via the keyboard.
 
 Each visual element is kept in its own class, but use inheritance to access functions and variables from the base class.
 
